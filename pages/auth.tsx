@@ -28,7 +28,7 @@ const Auth = () => {
             <div className="flex flex-col gap-4">
               {variant === "register" && (
                 <Input
-                  label="Name"
+                  label="Username"
                   onChange={(ev: any) => setUsername(ev.target.value)}
                   id="name"
                   value={username}
@@ -61,9 +61,7 @@ const Auth = () => {
                 onClick={toggleVariant}
                 className="text-white ml-1 hover:underline cursor-po"
               >
-                {variant === "login"
-                  ? "Register here! "
-                  : "Ok go for login... "}
+                {variant === "login" ? "Register here!" : "Ok go for login..."}
               </span>
               {variant === "login" ? "🥳" : "🙄"}
             </p>
