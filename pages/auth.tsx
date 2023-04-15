@@ -4,7 +4,7 @@ import { useCallback, useState } from "react";
 
 const Auth = () => {
   const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
+  const [name, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const [variant, setVariant] = useState("");
@@ -21,7 +21,7 @@ const Auth = () => {
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [email, name, password]);
 
   return (
     <div className="relative h-full w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
@@ -40,7 +40,7 @@ const Auth = () => {
                   label="Username"
                   onChange={(ev: any) => setUsername(ev.target.value)}
                   id="name"
-                  value={username}
+                  value={name}
                 />
               )}
               <Input
@@ -58,7 +58,10 @@ const Auth = () => {
                 value={password}
               />
             </div>
-            <button className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition">
+            <button
+              onClick={register}
+              className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition"
+            >
               {variant === "login" ? "Log in 🎉" : "Register 🤤"}
             </button>
             <p className="text-neutral-500 mt-12">
