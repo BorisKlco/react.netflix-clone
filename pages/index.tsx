@@ -1,5 +1,6 @@
+import Navbar from "@/components/Navbar";
 import { NextPageContext } from "next";
-import { getSession, signOut } from "next-auth/react";
+import { getSession } from "next-auth/react";
 
 export async function getServerSideProps(context: NextPageContext) {
   const session = await getSession(context);
@@ -18,12 +19,8 @@ export async function getServerSideProps(context: NextPageContext) {
 }
 
 export default function Home() {
-  return (
-    <>
-      <h1>Netflix Clone</h1>
-      <button className="h-10 w-full bg-white" onClick={() => signOut()}>
-        Logout
-      </button>
-    </>
-  );
+  return;
+  <>
+    <Navbar />
+  </>;
 }
