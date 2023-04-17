@@ -19,8 +19,9 @@ export async function getServerSideProps(context: NextPageContext) {
 }
 
 export default function Home() {
-  return;
-  <>
-    <Navbar />
-  </>;
+  return (
+    <>
+      <Navbar />
+    </>
+  );
 }
