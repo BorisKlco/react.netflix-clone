@@ -8,8 +8,6 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method == "DELETE") {
-    console.log("teste");
-    console.log(req);
     const { currentUser } = await serverAuth(req, res);
 
     const { movieId } = req.query;
