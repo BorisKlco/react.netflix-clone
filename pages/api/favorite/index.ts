@@ -39,6 +39,7 @@ export default async function handler(
     }
 
     if (req.method === "DELETE") {
+      console.log(req);
       const { currentUser } = await serverAuth(req, res);
 
       const { movieId } = req.body;
